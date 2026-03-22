@@ -1,0 +1,242 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  background: #d8d8d8;
+  color: #333;
+}
+
+a { color: #cc0000; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── PAGE ── */
+#page {
+  width: 780px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0,0,0,.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════════════════════
+   TOP SECTION: two columns from the very top
+   Left col (160px white): logo + sidebar
+   Right col (flex): red header + profile bar + content
+   ══════════════════════════════════════════════ */
+#body-columns {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+}
+
+/* ── LEFT COLUMN (logo + sidebar, always white) ── */
+#left-col {
+  width: 160px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #e8d8d8;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo area: sits at the top, same height as header+profile-bar on the right */
+#header-logo {
+  /* height is set by the right column naturally via stretch */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  background: #fff;
+  /* border-bottom mirrors the profile-bar bottom edge */
+  border-bottom: 1px solid #e8d8d8;
+}
+
+#header-logo img {
+  width: 138px;
+  height: auto;
+}
+
+/* Sidebar nav lives below the logo inside the same left col */
+#sidebar {
+  flex: 1;
+  font-size: 11px;
+  padding-top: 5px;
+}
+
+/* ── RIGHT COLUMN ── */
+#right-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Red header bar (brand + nav) */
+#header {
+  background: #e00000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  min-height: 52px;
+}
+
+.brand-name {
+  font-size: 19px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+.brand-name .light { font-weight: normal; }
+
+#topnav { display: flex; gap: 10px; }
+#topnav a { color: #fff; font-size: 11px; }
+
+/* Profile name bar */
+#profile-bar {
+  background: #c04545;
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 28px;
+}
+
+/* ── CONTENT ── */
+#content { flex: 1; }
+
+/* ── SIDEBAR INTERNALS ── */
+.sb-search { padding: 3px 5px 5px; }
+.sb-search input {
+  width: 100%;
+  border: 1px solid #bbb;
+  padding: 2px 4px;
+  font-size: 11px;
+  color: #888;
+}
+
+.sb-nav a {
+  display: block;
+  color: #cc0000;
+  padding: 2px 6px;
+  border-bottom: 1px solid #f0e8e8;
+  font-size: 11px;
+  line-height: 16px;
+}
+.sb-nav a:hover { background: #fff5f5; text-decoration: none; }
+
+.sb-inline {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f0e8e8;
+}
+.sb-inline a { border-bottom: none; flex: 1; }
+.sb-inline a:last-child { text-align: right; flex: 0; white-space: nowrap; }
+
+.freunde-box { margin: 8px 5px; border-top: 2px solid #c03030; }
+.freunde-box-hdr {
+  background: #f0a0a0;
+  padding: 3px 5px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #600;
+}
+.freunde-box-body {
+  background: #fde8e8;
+  padding: 4px 5px;
+  font-size: 10px;
+  color: #555;
+  line-height: 14px;
+}
+
+/* ── PROFILE AREA (photo left, info right) ── */
+.profile-area { display: flex; align-items: flex-start; }
+
+.photo-col {
+  width: 185px;
+  flex-shrink: 0;
+  padding: 8px 10px 6px 8px;
+}
+.photo-col img.profile-pic {
+  width: 165px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid #ccc;
+  background: #d0d0d0;
+  margin-bottom: 8px;
+}
+.photo-links a {
+  display: block;
+  color: #cc0000;
+  font-size: 11px;
+  padding: 2px 0;
+  border-bottom: 1px solid #f0d0d0;
+}
+.photo-links a:last-child { border-bottom: none; }
+
+/* ── INFO PANEL ── */
+.info-panel { flex: 1; min-width: 0; padding-top: 8px; }
+
+/* SECTION BOXES */
+.sbox { border-top: 2px solid #cc2222; margin-bottom: 8px; }
+
+.sbox-hdr {
+  background: #f5a5a5;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.sbox-hdr .bea { font-weight: normal; color: #999; font-size: 11px; }
+
+.sbox-body { background: #fff; padding: 6px 8px; }
+
+.verbindung-text {
+  background: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 8px;
+}
+
+/* Sub-headings (Account, Allgemeines, Früher…) */
+.info-sub {
+  color: #cc0000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 8px 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.info-sub .bea { font-weight: normal; font-size: 11px; color: #aaa; }
+
+.info-row {
+  display: flex;
+  padding: 1px 8px;
+  font-size: 11px;
+  line-height: 18px;
+}
+.info-lbl { color: #888; width: 115px; flex-shrink: 0; }
+.info-val { color: #333; }
+.info-val.red { color: #cc0000; font-weight: bold; }
+
+/* ── GRUPPEN LIST ── */
+.gruppen-list {
+  list-style: disc;
+  padding: 4px 0 6px 22px;
+  margin: 0;
+}
+.gruppen-list li { padding: 1px 0; line-height: 18px; }
+.gruppen-list li a { color: #cc0000; font-size: 11px; }
+.gruppen-list li a:hover { text-decoration: underline; }
