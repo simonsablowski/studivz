@@ -7,6 +7,11 @@ body {
   color: #333;
 }
 
+@media (max-width: 780px) {
+  body { background: #fff; }
+}
+
+
 a { color: #cc0000; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
@@ -18,6 +23,13 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 0 4px rgba(0,0,0,.3);
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 780px) {
+  #page {
+    width: 100%;
+    box-shadow: none;
+  }
 }
 
 /* ══════════════════════════════════════════════
@@ -240,3 +252,5 @@ a:hover { text-decoration: underline; }
 .gruppen-list li { padding: 1px 0; line-height: 18px; }
 .gruppen-list li a { color: #cc0000; font-size: 11px; }
 .gruppen-list li a:hover { text-decoration: underline; }
+
+
